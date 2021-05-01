@@ -10,7 +10,7 @@ cp static/*.jpeg /cyberpatriot/
 
 echo -e 'DONE\nCreating Team ID Changer...'
 chmod 777 /usr/local/bin/
-echo 'Skills Contestant' > /usr/local/bin/pysel/TEAM
+echo 'Mensa Jnr' > /usr/local/bin/pysel/TEAM
 
 echo 'Ubuntu 16.04, 18.04, 20.04 - Using systemd'
 cp static/pysel_scoring.service /etc/systemd/system/
