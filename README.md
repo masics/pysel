@@ -1,4 +1,8 @@
 # PySEL - Python Scoring Engine: Linux
+# http://www.eoctech.edu/computerrepairandnetworking/
+# Josh Davis
+# (405) 390-5325 ext. 246
+# jdavis@eoctech.edu
 
 ## Description
 This is a rewrite of CSEL in Python. The engine was simplified from a GUI interface to a simple config file. PySEL was written in order to help cyberpatriot coaches and other teams create their own practice linux images. 
