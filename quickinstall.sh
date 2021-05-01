@@ -1,8 +1,8 @@
 echo -e "DONE\nObfuscating pysel.py..."
 pyarmor obfuscate --recursive --output /usr/local/bin/pysel/ score.py
-chown $cpuser:$cpuser /usr/local/bin/pysel
+chown ubuntu:ubuntu /usr/local/bin/pysel
 
-echo -e 'DONE\nCreating /pysel-static directory...'
+echo -e 'DONE\nCreating /cyberpatriot directory...'
 mkdir -p /cyberpatriot/
 cp static/*.png /cyberpatriot/
 cp static/*.wav /cyberpatriot/
