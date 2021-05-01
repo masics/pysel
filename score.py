@@ -3,8 +3,8 @@ s_config = """
 debug = yes
 scoreReportLocation = /home/ubuntu/Desktop/ScoreReport.html
 remoteReportingenabled = no
-remoteReportingServer = http://moodle.centraltech.edu
-remoteReportingRound = SkillsUSA State Competition
+remoteReportingServer = http://cybertaipan.mensa.org.au
+remoteReportingRound = Mensa Training Round
 timeLimit = 150
 
 [01-RemoveMcPoyle:Remove_users]
@@ -270,8 +270,8 @@ s_config =
 debug = yes
 scoreReportLocation = /home/ubuntu/Desktop/ScoreReport.html
 remoteReportingenabled = no
-remoteReportingServer = http://moodle.centraltech.edu
-remoteReportingRound = OK-Cup-StateRd-Ub16
+remoteReportingServer = http://cybertaipan.mensa.org.au
+remoteReportingRound = Training Round
 timeLimit = 150
 
 [10-DisableGuestEtc:Secure_lightdm]
