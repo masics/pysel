@@ -6,6 +6,7 @@ echo -e 'DONE\nCreating /cyberpatriot directory...'
 mkdir -p /cyberpatriot/
 cp static/*.png /cyberpatriot/
 cp static/*.wav /cyberpatriot/
+cp static/*.jpeg /cyberpatriot/
 
 echo -e 'DONE\nCreating Team ID Changer...'
 chmod 777 /usr/local/bin/
