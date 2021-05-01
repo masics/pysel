@@ -1,0 +1,8 @@
+Question:
+
+A user on this system is attempting to crack the passwords of the user accounts on this system. What is the path to the program that allows this attempt?
+
+Answer: <Type Answer Here>
+
+
+Note: There must be a single space between the colon and the beginning of your answer. There may be no spaces in your answer.  If your answer requires spaces, please use the underscore "_" in place of the space.  Do not include the carets (< >) in your answer.
