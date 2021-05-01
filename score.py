@@ -13,7 +13,23 @@ tag = User Management
 pointValue = 3
 parameters = mcpoyle
 description = Users that should be removed from the system 
-msg = Unwanted user %PARAMETER% has been removed: 
+msg = Unwanted user %PARAMETER% has been removed! 
+
+[01a-ForensicsQ1:Check_forensics]
+enabled = yes
+tag = Forensics
+pointValue = 1
+parameters = /home/ubuntu/Desktop/ForensicsQuestion1.txt:12345
+description = What is the tcp port of the backdoor?
+msg = Backdoor tcp port
+
+[01b-ForensicsQ2:Check_forensics]
+enabled = yes
+tag = Forensics
+pointValue = 1
+parameters = /home/ubuntu/Desktop/ForensicsQuestion2.txt:/usr/local/bin/john
+description = What is the path to the unwanted program
+msg = Path to the unwanted program
 
 [02-AddMacDee:Add_users]
 enabled = yes
@@ -71,7 +87,7 @@ parameters = allow-guest greeter-hide-users greeter-show-manual-login
 description = 
 msg = Guest account has been disabled
 
-[08-CheckUserPassword: Check_user_password]
+[08-CheckUserPassword:Check_user_password]
 enabled = yes
 tag = User Management
 pointValue = 2
