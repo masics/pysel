@@ -15,19 +15,19 @@ parameters = mcpoyle
 description = Users that should be removed from the system 
 msg = Unwanted user %PARAMETER% has been removed! 
 
-[01a-ForensicsQ1:Check_forensics]
+[01a-ForensicsQ1:File_now_contains]
 enabled = yes
 tag = Forensics
 pointValue = 1
-parameters = ForensicQuestion1.txt:12345
+parameters = /home/ubuntu/Desktop/ForensicQuestion1.txt:12345
 description = What is the tcp port of the backdoor?
 msg = Backdoor tcp port
 
-[01b-ForensicsQ2:Check_forensics]
+[01b-ForensicsQ2:File_now_contains]
 enabled = yes
 tag = Forensics
 pointValue = 1
-parameters = ForensicQuestion2.txt:/usr/sbin/john
+parameters = /home/ubuntu/Desktop/ForensicQuestion2.txt:/usr/sbin/john
 description = What is the path to the unwanted program
 msg = Path to the unwanted program
 
