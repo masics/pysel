@@ -20,7 +20,7 @@ msg = Unwanted user %PARAMETER% has been removed:
 enabled = yes
 tag = User Management
 pointValue = 1
-parameters = queenie credence
+parameters = gellert credence
 description = Users that need to be added to the system
 msg = New user %PARAMETER% added to system 
 
@@ -28,7 +28,7 @@ msg = New user %PARAMETER% added to system
 enabled = yes
 tag = User Management
 pointValue = -10
-parameters = tina albus theseus 
+parameters = tina albus theseus porpentina
 description = Users that are required on the system
 msg = Essential user %PARAMETER% has been removed!
 
