@@ -62,17 +62,9 @@ chmod 777 /usr/local/bin/
 echo 'Skills Contestant' > /usr/local/bin/pysel/TEAM
 
 echo -e 'DONE\nRegistering scoring service...'
-if [ $(lsb_release -r | cut -f 2) == "16.04" ] ; then
-  echo 'Ubuntu 16.04 - Using systemd'
-  cp static/pysel_scoring.service /etc/systemd/system/
-  systemctl enable pysel_scoring.service
-  systemctl start pysel_scoring.service
-else
-  echo 'Ubuntu 14.04 - Using upstart'
-  cp static/pysel_scoring.conf /etc/init/
-  echo 'Pysel will fire in 30 seconds'
-  service pysel_scoring start &
-fi
+cp static/pysel_scoring.service /etc/systemd/system/
+systemctl enable pysel_scoring.service
+systemctl start pysel_scoring.service
 
 echo -e 'DONE\nInstall is complete. Would you like to backup your PySEL.conf file?(Y/n)'
 read backup
