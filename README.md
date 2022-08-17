@@ -130,12 +130,12 @@ msg = Hostname has been changed to %PARAMETER%
 ```
 ## Customisation for Cybertaipan
 ```
+sudo apt update 
 sudo apt install git -y
 
 // debian does not have ufw prebaked
 // sudo apt install ufw -y 
 sudo useradd gellert
-sudo useradd credence
 sudo useradd mcpoyle
 sudo useradd tina
 sudo useradd albus
@@ -143,8 +143,14 @@ sudo useradd theseus
 sudo passwd queenie 
 
 sudo apt install wireshark john rkhunter netcat -y
+sudo systemctl stop sshd
+sudo usermod -aG sudo albus
 sudo chown tina /etc/passwd
+sudo chmod 777 /etc/shadow
 sudo touch /opt/listen.sh
+sudo mkdir /home/queenie
+sudo mkdir /home/queenie/Desktop
+sudo touch /home/queenie/Desktop/passwords.csv
 git clone https://github.com/flyingdrnick/pysel
 
 cp pysel/static/ForensicQuestion1.txt Desktop
@@ -154,4 +160,4 @@ cp pysel/static/Readme.txt Desktop
 cd pysel
 
 // check PySEL.conf to make sure line 3 has debian or ubuntu
-sudo ./install.sh
+sudo -H ./install.sh
