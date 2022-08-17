@@ -128,3 +128,31 @@ parameters = cyberpatriot
 description = Make sure the hostname is set to "Cyberpatriot"
 msg = Hostname has been changed to %PARAMETER%
 ```
+
+Customisation for Cybertaipan
+
+sudo apt install git -y
+
+// debian does not have ufw prebaked
+// sudo apt install ufw -y 
+sudo useradd gellert
+sudo useradd credence
+sudo useradd mcpoyle
+sudo useradd tina
+sudo useradd albus
+sudo useradd theseus
+sudo passwd queenie 
+
+sudo apt install wireshark john rkhunter netcat -y
+sudo chown tina /etc/passwd
+sudo touch /opt/listen.sh
+git clone https://github.com/flyingdrnick/pysel
+
+cp pysel/static/ForensicQuestion1.txt Desktop
+cp pysel/static/ForensicQuestion2.txt Desktop
+cp pysel/static/Readme.txt Desktop
+
+cd pysel
+
+// check PySEL.conf to make sure line 3 has debian or ubuntu
+sudo ./install.sh
