@@ -13,29 +13,13 @@ tag = User Management
 pointValue = 3
 parameters = mcpoyle
 description = Users that should be removed from the system 
-msg = Unwanted user %PARAMETER% has been removed! 
-
-[01a-ForensicsQ1:File_now_contains]
-enabled = yes
-tag = Forensics
-pointValue = 1
-parameters = /home/ubuntu/Desktop/ForensicQuestion1.txt:12345
-description = What is the tcp port of the backdoor?
-msg = Backdoor tcp port
-
-[01b-ForensicsQ2:File_now_contains]
-enabled = yes
-tag = Forensics
-pointValue = 1
-parameters = /home/ubuntu/Desktop/ForensicQuestion2.txt:/usr/sbin/john
-description = What is the path to the unwanted program
-msg = Path to the unwanted program
+msg = Unwanted user %PARAMETER% has been removed: 
 
 [02-AddMacDee:Add_users]
 enabled = yes
 tag = User Management
 pointValue = 1
-parameters = mac deandra
+parameters = queenie credence
 description = Users that need to be added to the system
 msg = New user %PARAMETER% added to system 
 
@@ -43,7 +27,7 @@ msg = New user %PARAMETER% added to system
 enabled = yes
 tag = User Management
 pointValue = -10
-parameters = frank skills dennis 
+parameters = tina albus theseus 
 description = Users that are required on the system
 msg = Essential user %PARAMETER% has been removed!
 
@@ -51,7 +35,7 @@ msg = Essential user %PARAMETER% has been removed!
 enabled = yes
 tag = User Management
 pointValue = 2
-parameters = frank
+parameters = tina
 description = Users that are required to be Administrators
 msg = User %PARAMETER% is now an administrator
 
@@ -59,7 +43,7 @@ msg = User %PARAMETER% is now an administrator
 enabled = yes
 tag = User Management
 pointValue = 2 
-parameters = dennis
+parameters = albus
 description = Users that are prohibited from being Administrators
 msg = User %PARAMETER% is no longer an administrator
 
@@ -67,7 +51,7 @@ msg = User %PARAMETER% is no longer an administrator
 enabled = yes
 tag = User Management
 pointValue = 2
-parameters = charlie:webdev deandra:webdev
+parameters = albus:webdev credence:webdev
 description = Users that are required to be in a group
 msg = User %PARAMETER% is now in group
 
@@ -87,11 +71,11 @@ parameters = allow-guest greeter-hide-users greeter-show-manual-login
 description = 
 msg = Guest account has been disabled
 
-[08-CheckUserPassword:Check_user_password]
+[08-CheckUserPassword: Check_user_password]
 enabled = yes
 tag = User Management
 pointValue = 2
-parameters = deandra:MinDays charlie:MaxDays frank:NoPassword
+parameters = tina:MinDays credence:MaxDays queenie:NoPassword
 description = Ex: username:check. Possible parameters MinDays, MaxDays, NoPassword
 msg = Password issue has been fixed: %PARAMETER%
 
@@ -115,7 +99,7 @@ msg = Account policy has been made more secure by %PARAMETER%
 enabled = yes
 tag = Unwanted Software
 pointValue = 2
-parameters = john tightvncserver netdiscover
+parameters = john wireshark telnet
 description = Packages that are not allowed on the system
 msg = Unwanted software %PARAMETER% removed
 
@@ -187,7 +171,7 @@ msg = Directory permissions on /var/www/html have set
 enabled = yes
 tag = Prohibited File
 pointValue = 5
-parameters = /home/frank/Desktop/passwords.csv
+parameters = /home/queenie/Desktop/passwords.csv
 description = Files you want removed from the system
 msg = Plaintext password file %PARAMETER% removed
 
@@ -203,15 +187,15 @@ msg = Ssh server is now displaying a login banner.
 enabled = yes
 tag = Local Policy
 pointValue = 5
-parameters = /etc/group:^nopasswdlogin.*frank.*
+parameters = /etc/group:^nopasswdlogin.*queenie.*
 description = Text you would like removed from file
-msg = User frank no longer allowed to login without password
+msg = User queenie no longer allowed to login without password
 
 [24-DennisHasPW:File_no_longer_contains]
 enabled = yes
 tag = Password Policy
 pointValue = 3
-parameters = /etc/shadow:dennis::.*
+parameters = /etc/shadow:albus::.*
 description = Text you would like removed from file
 msg = User dennis has a password
 
@@ -235,7 +219,7 @@ msg = HTTP traffic is allowed through firewall
 enabled = yes
 tag = Local Policy
 pointValue = 4
-parameters = /etc/passwd:*.charlie.*rbash.*
+parameters = /etc/passwd:*.credence.*rbash.*
 description = Text you would like added to file
 msg = User charlie has been set to a restricted bash shell
 
@@ -243,7 +227,7 @@ msg = User charlie has been set to a restricted bash shell
 enabled = yes
 tag = Local Policy
 pointValue = 4
-parameters = /etc/ssh/sshd_config:^DenyUsers.*dennis.*
+parameters = /etc/ssh/sshd_config:^DenyUsers.*jacob.*
 description = Text you would like added to file
 msg = User dennis has been denied ssh access.
 
@@ -270,6 +254,7 @@ pointValue = 5
 parameters = /opt/listen.sh
 description = Files you want removed from the system
 msg = Netcat backdoor removed: %PARAMETER%
+
 
 
 """
