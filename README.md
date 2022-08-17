@@ -130,6 +130,7 @@ msg = Hostname has been changed to %PARAMETER%
 ```
 ## Customisation for Cybertaipan
 ```
+cd ~
 sudo apt update 
 sudo apt install git -y
 
@@ -140,6 +141,7 @@ sudo useradd mcpoyle
 sudo useradd tina
 sudo useradd albus
 sudo useradd theseus
+sudo useradd queenie
 sudo passwd -d queenie 
 
 sudo apt install wireshark john rkhunter netcat -y
