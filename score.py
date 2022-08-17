@@ -7,6 +7,7 @@ remoteReportingServer = http://cybertaipan.mensa.org.au
 remoteReportingRound = Mensa Training Round
 timeLimit = 150
 
+
 [01-RemoveMcPoyle:Remove_users]
 enabled = yes
 tag = User Management
@@ -197,7 +198,7 @@ tag = Password Policy
 pointValue = 3
 parameters = /etc/shadow:albus::.*
 description = Text you would like removed from file
-msg = User dennis has a password
+msg = User albus has a password
 
 [25-RkhunterCronJob:File_now_contains]
 enabled = yes
@@ -221,7 +222,7 @@ tag = Local Policy
 pointValue = 4
 parameters = /etc/passwd:*.credence.*rbash.*
 description = Text you would like added to file
-msg = User charlie has been set to a restricted bash shell
+msg = User credence has been set to a restricted bash shell
 
 [28-DennisNoSsh:File_now_contains]
 enabled = yes
@@ -229,7 +230,7 @@ tag = Local Policy
 pointValue = 4
 parameters = /etc/ssh/sshd_config:^DenyUsers.*jacob.*
 description = Text you would like added to file
-msg = User dennis has been denied ssh access.
+msg = User jacob has been denied ssh access.
 
 [29-EtcPasswdRoot:Owned_by_user]
 enabled = yes
@@ -237,7 +238,7 @@ tag = Local Policy
 pointValue = 4
 parameters = /etc/passwd:root
 description = File must be owned by this user. Format = File:user
-msg = User frank is no longer owner of file /etc/passwd
+msg = User tina is no longer owner of file /etc/passwd
 
 [30-VarWwwWebdev:Owned_by_group]
 enabled = no
