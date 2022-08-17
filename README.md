@@ -128,9 +128,8 @@ parameters = cyberpatriot
 description = Make sure the hostname is set to "Cyberpatriot"
 msg = Hostname has been changed to %PARAMETER%
 ```
-
-Customisation for Cybertaipan
-
+## Customisation for Cybertaipan
+```
 sudo apt install git -y
 
 // debian does not have ufw prebaked
