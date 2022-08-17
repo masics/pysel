@@ -140,7 +140,7 @@ sudo useradd mcpoyle
 sudo useradd tina
 sudo useradd albus
 sudo useradd theseus
-sudo passwd queenie 
+sudo passwd -d queenie 
 
 sudo apt install wireshark john rkhunter netcat -y
 sudo systemctl stop sshd
