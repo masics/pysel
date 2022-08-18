@@ -134,6 +134,12 @@ cd ~
 
 // debian does not have ufw prebaked
 // sudo apt install ufw -y 
+// sudo apt git -y
+// might have "failed to fetch" errors
+// ubuntu /etc/resolv.conf could have the wrong nameserver
+// nameserver 8.8.8.8
+// nameserver 4.4.4.4
+// sudo systemctl restart NetworkManager.service
 sudo useradd mcpoyle
 sudo useradd tina
 sudo useradd albus
