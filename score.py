@@ -1,6 +1,6 @@
 s_config = """
 [General:Options]
-debug = yes
+debug = no
 scoreReportLocation = /home/ubuntu/Desktop/ScoreReport.html
 remoteReportingenabled = no
 remoteReportingServer = http://cybertaipan.mensa.org.au
