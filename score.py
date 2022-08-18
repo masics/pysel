@@ -65,7 +65,7 @@ description = Text you would like added to file
 msg = Group webdev has been created
 
 [07-DisableGuestEtc:Secure_lightdm]
-enabled = yes
+enabled = no
 tag = User Management
 pointValue = 2
 parameters = allow-guest greeter-hide-users greeter-show-manual-login
@@ -137,7 +137,7 @@ description = Services that you want stopped
 msg = Service %PARAMETER% has been disabled
 
 [17-TurnOnUpdates:Update_settings]
-enabled = yes
+enabled = no
 tag = OS Update
 pointValue = 1
 parameters = installSecUpdates checkDaily downloadSecUpdates 
@@ -145,7 +145,7 @@ description = Possible parameters: installSecUpdates checkDaily, downloadSecUpda
 msg = Update settings have been configured: 
 
 [18-SysCtrlGoodness:Kernel_harden]
-enabled = yes
+enabled = no
 tag = Local Policy
 pointValue = 1
 parameters = DmesgRestrict CtrlAltDel DisableSendRedirects 
