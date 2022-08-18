@@ -154,10 +154,14 @@ sudo touch /opt/listen.sh
 sudo mkdir /home/queenie
 sudo mkdir /home/queenie/Desktop
 sudo touch /home/queenie/Desktop/passwords.csv
+sudo sed -i '2i auth    sufficient pam_succeed_if.so user ingroup nopasswdlogin' /etc/pam.d/gdm-password
+sudo groupadd nopasswdlogin
+sudo gpasswd --add queenie nopasswdlogin
 
 sudo apt update 
 sudo apt install git wireshark john rkhunter netcat mysql-server -y
 sudo apt remove openssh-server openssh-client -y
+sudo rm -fr /etc/ssh
 git clone https://github.com/flyingdrnick/pysel
 
 cp pysel/static/ForensicQuestion1.txt Desktop
