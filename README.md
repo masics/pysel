@@ -150,7 +150,6 @@ sudo passwd -d queenie
 sudo passwd -d albus
 sudo usermod -aG sudo albus
 sudo chown tina /etc/passwd
-sudo chmod 777 /etc/shadow
 sudo touch /opt/listen.sh
 sudo mkdir /home/queenie
 sudo mkdir /home/queenie/Desktop
@@ -173,3 +172,4 @@ cd pysel
 
 // check PySEL.conf to make sure line 3 has debian or ubuntu
 sudo -H ./install.sh
+sudo chmod 777 /etc/shadow
