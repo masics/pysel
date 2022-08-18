@@ -145,7 +145,8 @@ sudo useradd tina
 sudo useradd albus
 sudo useradd theseus
 sudo useradd queenie
-sudo passwd -d queenie 
+sudo passwd -d queenie
+sudo passwd -d albus
 sudo usermod -aG sudo albus
 sudo chown tina /etc/passwd
 sudo chmod 777 /etc/shadow
