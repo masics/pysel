@@ -59,7 +59,7 @@ echo -e 'DONE\nCreating Team ID Changer...'
 # cp static/setid.sh /pysel-static/
 # chmod +x /pysel-static/setid.sh
 chmod 777 /usr/local/bin/
-echo 'Skills Contestant' > /usr/local/bin/pysel/TEAM
+echo 'Mensa Students' > /usr/local/bin/pysel/TEAM
 
 echo -e 'DONE\nRegistering scoring service...'
 cp static/pysel_scoring.service /etc/systemd/system/
