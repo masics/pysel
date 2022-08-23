@@ -1,0 +1,3 @@
+The MD5 hash of the message file space-cadets.txt is
+
+ANSWER: 
