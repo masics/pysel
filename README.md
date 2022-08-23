@@ -130,6 +130,9 @@ msg = Hostname has been changed to %PARAMETER%
 ```
 ## Customisation for Cybertaipan
 ```
+testing indicates "Ubuntu Linux Desktop with Web Interface" is a very good product to use. t3.small works smoothly
+will likely need cdk version 2 to make it easy to scale
+```
 cd ~
 
 // debian does not have ufw prebaked
