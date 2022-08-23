@@ -1,0 +1,9 @@
+The password was encrypted using a basic XOR cipher. The encrypted output from the XOR cipher is "ALIENS".
+
+The cipher key:
+
+10000010000000000011111011101000111110101100110
+
+What is the password?
+
+ANSWER: 
