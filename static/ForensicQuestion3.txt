@@ -2,7 +2,7 @@ The password was encrypted using a basic XOR cipher. The encrypted output from t
 
 The cipher key:
 
-10000010000000000011111011101000111110101100110
+100100001100100000101000001000000110100011100
 
 What is the password?
 
