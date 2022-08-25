@@ -1,8 +1,5 @@
 #!/bin/bash
 
-// Ubuntu Desktop with Web Interface
-cd ~
-
 sudo useradd mcpoyle
 sudo useradd newt
 sudo useradd tina
@@ -23,13 +20,11 @@ sudo groupadd nopasswdlogin
 sudo gpasswd --add queenie nopasswdlogin
 
 sudo apt update 
-sudo apt install git wireshark john rkhunter netcat mysql-server -y
+sudo apt install john rkhunter tshark netcat mysql-server -y
 
-cp pysel/static/forensic?.txt Desktop
-cp pysel/static/readme.txt Desktop
-cp pysel/static/space-cadets.txt Desktop
-
-cd pysel
+cp static/forensic?.txt ~/Desktop
+cp static/readme.txt ~/Desktop
+cp static/space-cadets.txt ~/Documents
 
 sudo -H ./install.sh
 sudo chmod 777 /etc/shadow
