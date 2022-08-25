@@ -18,23 +18,11 @@ done
 
 defaultuser=$(getent passwd 1000 | cut -d: -f 1)
 echo -e "The default user is currently set to" $defaultuser
-echo -e "Press [enter] to keep this user or enter a new default user:"
-# read cpuser
-if [ -z "$cpuser" ] ; then
-    cpuser=$defaultuser
-else :    
-fi
 
 defaultlocation='/home/'$cpuser'/Desktop/score.html'
 echo -e "The score report location is currently set to "$defaultlocation
-echo -e 'Press [enter] to keep it there or enter a new location:'
 # read scorelocation
-if [ -z "$scorelocation" ] ; then
-    echo -e '#!usr/bin/env python3\n\nSCORE_REPORT_LOCATION = '\"$defaultlocation\" > score.py
-else
-    echo -e '#!usr/bin/env python3\n\nSCORE_REPORT_LOCATION = '\"$scorelocation\" > score.py
-fi
-
+echo -e '#!usr/bin/env python3\n\nSCORE_REPORT_LOCATION = '\"$defaultlocation\" > score.py
 
 echo "Building Engine..."
 echo -e 's_config = """' > score.py
@@ -51,6 +39,9 @@ echo -e 'DONE\nCreating /pysel-static directory...'
 mkdir -p /pysel-static
 cp static/*.png /pysel-static/
 cp static/*.wav /pysel-static/
+cp static/forensic?.txt /home/ubuntu/Desktop
+cp static/readme.txt /home/ubuntu/Desktop
+cp static/space-cadets.txt /home/ubuntu/Documents
 
 echo -e 'DONE\nCreating Team ID Changer...'
 # chown $cpuser:$cpuser static/SetTeam.desktop
@@ -66,12 +57,3 @@ cp static/pysel_scoring.service /etc/systemd/system/
 systemctl enable pysel_scoring.service
 systemctl start pysel_scoring.service
 
-echo -e 'DONE\nInstall is complete. Would you like to backup your PySEL.conf file?(Y/n)'
-# read backup
-# if [ "$backup" == "n" ] || [ "$backup" == "N" ] ; then
-#    echo -e 'GOOD LUCK!'
-# else
-#    cp PySEL.conf '/home/'$cpuser'/Desktop/'
-#    echo -e "PySEL.conf has been copied to the Desktop for safe keeping. Don't forget to delete it!"
-#
-# fi

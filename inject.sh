@@ -18,12 +18,8 @@ sudo touch /home/queenie/Desktop/passwords.csv
 sudo echo 'auth sufficient pam_succeed_if.so user ingroup nopasswdlogin' > /etc/pam.d/gdm-password
 sudo groupadd nopasswdlogin
 sudo gpasswd --add queenie nopasswdlogin
-cp static/forensic?.txt /home/ubuntu/Desktop
-cp static/readme.txt /home/ubuntu/Desktop
-cp static/space-cadets.txt /home/ubuntu/Documents
 
 sudo apt update 
-sudo apt install john rkhunter netcat -y
+sudo apt install john rkhunter netcat -y -qq
 
-sudo -H ./install.sh
 sudo chmod 777 /etc/shadow
