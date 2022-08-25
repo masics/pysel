@@ -68,10 +68,10 @@ systemctl start pysel_scoring.service
 
 echo -e 'DONE\nInstall is complete. Would you like to backup your PySEL.conf file?(Y/n)'
 # read backup
-if [ "$backup" == "n" ] || [ "$backup" == "N" ] ; then
-    echo -e 'GOOD LUCK!'
-else
-    cp PySEL.conf '/home/'$cpuser'/Desktop/'
-    echo -e "PySEL.conf has been copied to the Desktop for safe keeping. Don't forget to delete it!"
-
-fi
+# if [ "$backup" == "n" ] || [ "$backup" == "N" ] ; then
+#    echo -e 'GOOD LUCK!'
+# else
+#    cp PySEL.conf '/home/'$cpuser'/Desktop/'
+#    echo -e "PySEL.conf has been copied to the Desktop for safe keeping. Don't forget to delete it!"
+#
+# fi
