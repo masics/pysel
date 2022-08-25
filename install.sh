@@ -67,7 +67,7 @@ systemctl enable pysel_scoring.service
 systemctl start pysel_scoring.service
 
 echo -e 'DONE\nInstall is complete. Would you like to backup your PySEL.conf file?(Y/n)'
-read backup
+# read backup
 if [ "$backup" == "n" ] || [ "$backup" == "N" ] ; then
     echo -e 'GOOD LUCK!'
 else
