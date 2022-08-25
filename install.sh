@@ -19,7 +19,7 @@ done
 defaultuser=$(getent passwd 1000 | cut -d: -f 1)
 echo -e "The default user is currently set to" $defaultuser
 echo -e "Press [enter] to keep this user or enter a new default user:"
-read cpuser
+# read cpuser
 if [ -z "$cpuser" ] ; then
     cpuser=$defaultuser
 else :    
@@ -28,7 +28,7 @@ fi
 defaultlocation='/home/'$cpuser'/Desktop/score.html'
 echo -e "The score report location is currently set to "$defaultlocation
 echo -e 'Press [enter] to keep it there or enter a new location:'
-read scorelocation
+# read scorelocation
 if [ -z "$scorelocation" ] ; then
     echo -e '#!usr/bin/env python3\n\nSCORE_REPORT_LOCATION = '\"$defaultlocation\" > score.py
 else
