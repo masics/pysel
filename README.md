@@ -135,46 +135,16 @@ will likely need cdk version 2 to make it easy to scale
 ```
 cd ~
 
-// debian does not have ufw prebaked
-// sudo apt install ufw -y 
-// sudo apt git -y
-// might have "failed to fetch" errors
-// ubuntu /etc/resolv.conf could have the wrong nameserver
-// nameserver 8.8.8.8
-// nameserver 4.4.4.4
-// sudo systemctl restart NetworkManager.service
-sudo useradd mcpoyle
-sudo useradd tina
-sudo useradd albus
-sudo useradd theseus
-sudo useradd jacob
-sudo useradd queenie
-sudo passwd -d queenie
-sudo passwd -d albus
-sudo usermod -aG sudo albus
-sudo chown tina /etc/passwd
-sudo touch /opt/listen.sh
-sudo mkdir /home/queenie
-sudo mkdir /home/queenie/Desktop
-sudo touch /home/queenie/Desktop/passwords.csv
-// gdm not suitable if deployed in cloud
-sudo echo 'sufficient pam_succeed_if.so user ingroup nopasswdlogin' > /etc/pam.d/gdm-password
-sudo groupadd nopasswdlogin
-sudo gpasswd --add queenie nopasswdlogin
-
-sudo apt update 
-sudo apt install git wireshark john rkhunter netcat mysql-server -y
-// remove ssh training parts if deployed in cloud
-// sudo apt remove openssh-server openssh-client -y
-// sudo rm -fr /etc/ssh
 git clone https://github.com/flyingdrnick/pysel
-
-cp pysel/static/ForensicQuestion1.txt Desktop
-cp pysel/static/ForensicQuestion2.txt Desktop
-cp pysel/static/Readme.txt Desktop
 
 cd pysel
 
+sudo chmod a+x inject.sh install.sh
+
+sudo -H ./inject.sh
+
 // check PySEL.conf to make sure line 3 has debian or ubuntu
+
 sudo -H ./install.sh
+
 sudo chmod 777 /etc/shadow

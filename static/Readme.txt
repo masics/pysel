@@ -24,4 +24,4 @@ Security patches for the operating system and all critical software should be ke
 
 Auditing should be enable to allow the security team to determine who tries to log into the system.
 
-Critical services: SSH
+Critical services: SSH APACHE
