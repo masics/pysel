@@ -20,7 +20,7 @@ sudo groupadd nopasswdlogin
 sudo gpasswd --add queenie nopasswdlogin
 
 sudo apt update 
-sudo apt install john rkhunter tshark netcat mysql-server -y
+sudo apt install john rkhunter netcat mysql-server -y
 
 cp static/forensic?.txt /home/ubuntu/Desktop
 cp static/readme.txt /home/ubuntu/Desktop
