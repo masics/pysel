@@ -20,6 +20,6 @@ sudo groupadd nopasswdlogin
 sudo gpasswd --add queenie nopasswdlogin
 
 sudo apt update 
-sudo apt install john rkhunter netcat -y -qq
+sudo apt install gedit john rkhunter netcat -y -qq
 
 sudo chmod 777 /etc/shadow

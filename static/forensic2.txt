@@ -1,6 +1,6 @@
 The MD5 hash of the message file space-cadets.txt is
 
-Answer: <Type answer here>
+ANSWER: <Type answer here>
 
 
 Note: There must be a single space between the colon and the beginning of your answer. There may be no spaces in your answer.  If your answer requires spaces, please use the underscore "_" inp lace of the space.  Do not include the carets (< >) in your answer.

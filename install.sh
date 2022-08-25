@@ -39,9 +39,11 @@ echo -e 'DONE\nCreating /pysel-static directory...'
 mkdir -p /pysel-static
 cp static/*.png /pysel-static/
 cp static/*.wav /pysel-static/
-cp static/forensic?.txt /home/ubuntu/Desktop
-cp static/Readme.txt /home/ubuntu/Desktop
-cp static/space-cadets.txt /home/ubuntu/Documents
+cp static/forensic?.txt /home/$cpuser/Desktop
+cp static/Readme.txt /home/$cpsuer/Desktop
+cp static/space-cadets.txt /home/$cpsuer/Documents
+chown $cpuser:$cpuser /home/$cpuser/Desktop/forensic?.txt
+chmod a+rw /home/$cpuser/forensic?.txt
 
 echo -e 'DONE\nCreating Team ID Changer...'
 # chown $cpuser:$cpuser static/SetTeam.desktop
