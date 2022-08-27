@@ -42,8 +42,8 @@ cp static/*.wav /pysel-static/
 cp static/forensic?.txt /home/ubuntu/Desktop
 cp static/Readme.txt /home/ubuntu/Desktop
 cp static/space-cadets.txt /home/ubuntu/Documents
-chown ubuntu:ubuntu /home/ubuntu/Desktop/forensic?.txt
-chmod a+rw /home/ubuntu/forensic?.txt
+chown ubuntu:ubuntu /home/ubuntu/Desktop/*
+chmod a+rw /home/ubuntu/Desktop/*
 
 echo -e 'DONE\nCreating Team ID Changer...'
 # chown $cpuser:$cpuser static/SetTeam.desktop
