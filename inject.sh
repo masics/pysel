@@ -20,6 +20,7 @@ sudo groupadd nopasswdlogin
 sudo gpasswd --add queenie nopasswdlogin
 
 sudo apt update 
-sudo apt install gedit john rkhunter netcat -y -qq
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq postfix < /dev/null > /dev/null
+sudo apt install gedit john rkhunter netcat mysql-server -y -qq
 
 sudo chmod 777 /etc/shadow
