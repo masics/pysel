@@ -12,8 +12,8 @@ sudo passwd -d albus
 sudo usermod -aG sudo albus
 sudo chown tina /etc/passwd
 sudo touch /opt/listen.sh
-sudo mkdir /home/queenie
-sudo mkdir /home/queenie/Desktop
+sudo mkdir /home/queenie /home/ubuntu
+sudo mkdir /home/queenie/Desktop /home/ubuntu/Desktop
 sudo touch /home/queenie/Desktop/passwords.csv
 sudo echo 'auth sufficient pam_succeed_if.so user ingroup nopasswdlogin' > /etc/pam.d/gdm-password
 sudo groupadd nopasswdlogin
