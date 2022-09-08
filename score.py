@@ -3,10 +3,17 @@ s_config = """
 debug = no
 scoreReportLocation = /home/ubuntu/Desktop/ScoreReport.html
 remoteReportingenabled = no
-remoteReportingServer = http://cybertaipan.mensa.org.au
-remoteReportingRound = Mensa Training Round
+remoteReportingServer = https://www.nicholaslau.com
+remoteReportingRound = CyberTaipan
 timeLimit = 150
 
+[00-Forensics:Check_forensics]
+enabled = yes
+tag  = Forensics
+pointValue = 10
+parameters = forensic1.txt:SULACO forensic2.txt:86e93f630b4a07a88657c057f2687039 
+description = Ex: forensic9.txt:green (Check forensic9.txt for ANSWER: green)
+msg = Forensic question %PARAMETER% is correct
 
 [01-RemoveMcPoyle:Remove_users]
 enabled = yes
@@ -36,7 +43,7 @@ msg = Essential user %PARAMETER% has been removed!
 enabled = yes
 tag = User Management
 pointValue = 2
-parameters = tina
+parameters = tina newt
 description = Users that are required to be Administrators
 msg = User %PARAMETER% is now an administrator
 
@@ -92,7 +99,7 @@ msg = Password policy %PARAMETER% secured
 enabled = yes
 tag = Account Policy
 pointValue = 1
-parameters = PasswordMaxDays PasswordMinDays LogUnknownFail
+parameters = PasswordMaxDays PasswordMinDays 
 description = Possible parameters: PasswordMaxDays, PasswordMinDays, PasswordWarnAge, LogUnknownFail, LogOkLogins, SuLogFile
 msg = Account policy has been made more secure by %PARAMETER%
 
@@ -100,7 +107,7 @@ msg = Account policy has been made more secure by %PARAMETER%
 enabled = yes
 tag = Unwanted Software
 pointValue = 2
-parameters = john wireshark telnet
+parameters = john rkhunter mysql wireshark
 description = Packages that are not allowed on the system
 msg = Unwanted software %PARAMETER% removed
 
@@ -113,7 +120,7 @@ description = Make sure the firewall is enabled
 msg = Firewall protection has been enabled
 
 [14-SecureSSH:Secure_ssh]
-enabled = yes
+enabled = no
 tag = Application Security
 pointValue = 2
 parameters = defaultPortChange PermitRootLoginNo Protocol2Only UsePAMyes PermitEmptyPasswordsNo
@@ -124,7 +131,7 @@ msg = SSH made more secure by %PARAMETER%
 enabled = yes
 tag = Service Auditing
 pointValue = 3
-parameters = ssh apache2
+parameters = apache2 sshd
 description = Services that must be running
 msg = Required service %PARAMETER% is running
 
@@ -201,7 +208,7 @@ description = Text you would like removed from file
 msg = User albus has a password
 
 [25-RkhunterCronJob:File_now_contains]
-enabled = yes
+enabled = no
 tag = Local Policy
 pointValue = 4
 parameters = /var/spool/cron/crontabs/root:^0\s1\s[*]1\s[*]1\s[*]1\s.*rkhunter.*
@@ -216,6 +223,14 @@ parameters = 80
 description = Port number that should exist in firewall rules
 msg = HTTP traffic is allowed through firewall
 
+[26a-HttpFirewallRule:Firewall_rule_exists]
+enabled = yes
+tag = Defensive Countermeasures
+pointValue = 3
+parameters = 22
+description = Port number that should exist in firewall rules
+msg = SSH traffic is allowed through firewall
+
 [27-CharlieRbase:File_now_contains]
 enabled = yes
 tag = Local Policy
@@ -228,9 +243,17 @@ msg = User credence has been set to a restricted bash shell
 enabled = yes
 tag = Local Policy
 pointValue = 4
-parameters = /etc/ssh/sshd_config:^DenyUsers.*jacob.*
+parameters = /etc/ssh/sshd_config:^AllowUsers.*newt.*
 description = Text you would like added to file
-msg = User jacob has been denied ssh access.
+msg = User newt has been granted ssh access.
+
+[28a-DennisNoSsh:File_now_contains]
+enabled = yes
+tag = Local Policy
+pointValue = 4
+parameters = /etc/ssh/sshd_config:^AllowUsers.*tina.*
+description = Text you would like added to file
+msg = User tina has been granted ssh access.
 
 [29-EtcPasswdRoot:Owned_by_user]
 enabled = yes
@@ -257,7 +280,6 @@ description = Files you want removed from the system
 msg = Netcat backdoor removed: %PARAMETER%
 
 
-
 """
 import configparser
 import subprocess
@@ -274,24 +296,7 @@ scoreReportLocation = ''
 teamIdLocation = '/usr/local/bin/pysel/TEAM'
 
 ## Dump your config here in order to test without installing
-"""
-s_config = 
-[General:Options]
-debug = yes
-scoreReportLocation = /home/ubuntu/Desktop/ScoreReport.html
-remoteReportingenabled = no
-remoteReportingServer = http://cybertaipan.mensa.org.au
-remoteReportingRound = Training Round
-timeLimit = 150
-
-[10-DisableGuestEtc:Secure_lightdm]
-enabled = yes
-tag = User Management
-pointValue = 5
-parameters = allow-guest greeter-hide-users greeter-show-manual-login
-description = 
-msg = Guest account has been disabled
-"""
+#s_config = """ """
 
 class Pysel:
 
@@ -299,8 +304,6 @@ class Pysel:
         buf = io.StringIO(s_file)
         config_parser = configparser.ConfigParser()
         config_parser.read_file(buf)
-#        config_parser = configparser.ConfigParser()
-#        config_parser.read(buf)
        
         team_config = configparser.ConfigParser()
         team_config.read(team_conf)
@@ -343,7 +346,7 @@ class Pysel:
 
     def draw_html_head(self, team, round):
         f = open(self.general['General:Options']['scorereportlocation'], 'w')
-        f.write('<!DOCTYPE html><html lang="en">\n<head><title>PySEL Score Report</title><meta http-equiv="refresh" content="40"></head>\n<body><table align="center"><tr><td><img src="/cyberpatriot/cplogo.png"></td><td><div align="center"><H1>Mensa</H1><H5>Cybersecurity Training</H5></div></td><td><img src="/cyberpatriot/eoclogo.jpeg"</td></tr></table><br><hr><br><table border="1"; align="center"><tr><td colspan=3><div align="center"><b>Team: ' + team + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Round: ' + round + '</b></div></td></tr><tr><td>Pts</td><td>Event</td><td>Tag</td></tr>\n')
+        f.write('<!DOCTYPE html><html lang="en">\n<head><title>PySEL Score Report</title><meta http-equiv="refresh" content="40"></head>\n<body><table align="center"><tr><td><img src="/pysel-static/cplogo.png"></td><td><div align="center"><H1>Mensa Australia</H1><H5>CyberTaipan</H5></div></td><td><img src="/pysel-static/eoclogo.png"</td></tr></table><br><hr><br><table border="1"; align="center"><tr><td colspan=3><div align="center"><b>Team: ' + team + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Round: ' + round + '</b></div></td></tr><tr><td>Pts</td><td>Event</td><td>Tag</td></tr>\n')
         f.close()
 
     def update_html_body(self, score, event, parameter, tag):
@@ -417,10 +420,10 @@ class Pysel:
             ## Did we gain or lose points?
             if initialScore < self.currentScore:
                 print("_____I LIKE YOUR STYLE!____")
-                self.play_noise('/cyberpatriot/gain.wav')
+                self.play_noise('/pysel-static/gain.wav')
             elif initialScore > self.currentScore:
                 print("_____YOU DISGUST ME!____")
-                self.play_noise('/cyberpatriot/lose.wav')
+                self.play_noise('/pysel-static/lose.wav')
 
             initialScore = self.currentScore
             print('Current score: {} out of {}'.format(self.currentScore, self.possibleScore))
@@ -435,7 +438,7 @@ class Pysel:
 
             print('You have', timeLeft, 'minutes remaining.\n\n')
             timeLeft -= 1
-            time.sleep(60)
+            time.sleep(10)
             
  
 if __name__ == "__main__":

@@ -155,7 +155,7 @@ class Pysel:
 
             print('You have', timeLeft, 'minutes remaining.\n\n')
             timeLeft -= 1
-            time.sleep(60)
+            time.sleep(10)
             
  
 if __name__ == "__main__":

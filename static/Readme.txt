@@ -13,12 +13,17 @@ Authorized users:
 	jacob
 	albus
 	theseus
+        gellert
 
 This workstation is used for web browsing, e-mail and word processing only.  No multimedia files or other applications should be installed.
 
-Company password policy requires that passwords should be complex and of a sufficient length to prevent brute-force attacks.  Passwords on all accounts should be changed on a regular basis, and users should not be able to reuse their recent passwords.  Policies should be implemented to prevent attackers from repeatedly guessing passwords.
+Users albus and credence are web designers. They should be part of the 'webdev' local group. These users develop a website on this station which could potentially have sensitive files. The content must be secured.
 
-The only people who should be able to remotely access the computer are the administrators, and ssh is the only remote access software permitted.
+Company password policy requires that passwords should be complex and of a sufficient length (at least 8 characters) to prevent brute-force attacks.  Passwords on all accounts should be changed on a regular basis (at least each 90 days), and users should not be able to reuse their 12 recent passwords.  Policies should be implemented to prevent attackers from repeatedly guessing passwords (maximum number of retries is 5).
+
+All unauthorized packages should be removed.
+
+The only people who should be able to remotely access the computer are the administrators, and ssh is the only remote access software permitted. Users connecting via SSH should receive a legal warning.
 
 Security patches for the operating system and all critical software should be kept up to date.
 
