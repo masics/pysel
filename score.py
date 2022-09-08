@@ -183,6 +183,14 @@ parameters = /home/queenie/Desktop/passwords.csv
 description = Files you want removed from the system
 msg = Plaintext password file %PARAMETER% removed
 
+[21a-RemovePWFile:Bad_file]
+enabled = yes
+tag = Prohibited File
+pointValue = 5
+parameters = /home/queenie/Video/bluey.avi
+description = Files you want removed from the system
+msg = Prohibited file %PARAMETER% removed
+
 [22-SshLoginBanner:File_now_contains]
 enabled = yes
 tag = Local Policy
